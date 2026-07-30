@@ -1,0 +1,97 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+      AppThemeDayNight - Material 2027 Expressive flavor of the
+      original DayNight theme. Keeps the original color tokens and
+      the SafeAppCompatViewInflater crash-safe inflation, but:
+        * transparent status + nav bars so the floating glass
+          toolbar / footer can sit on top of content;
+        * rounded-corner window background used as the scrim behind
+          every activity;
+        * dialog theme inherits the glass dialog background.
+    -->
+    <style name="AppThemeDayNight" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Swaps inflated text widgets for crash-safe subclasses (drag-shadow bug). -->
+        <item name="viewInflaterClass">com.v2ray.ang.util.SafeAppCompatViewInflater</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorMainBg">@color/colorBg</item>
+        <item name="colorMainText">@color/colorText</item>
+        <!-- Transparent system bars so the floating glass toolbar reads on top of content -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">@color/colorPrimary</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:enforceStatusBarContrast" tools:targetApi="29">false</item>
+        <item name="android:enforceNavigationBarContrast" tools:targetApi="29">false</item>
+        <item name="alertDialogTheme">@style/AppDialogTheme</item>
+        <item name="materialAlertDialogTheme">@style/AppDialogTheme</item>
+        <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
+
+    <!--
+      Glass dialog theme - rounded corners + translucent glass fill.
+      Inherits AppCompat.DayNight so it follows the system dark mode.
+    -->
+    <style name="AppDialogTheme" parent="Theme.AppCompat.DayNight.Dialog.Alert">
+        <!-- Swaps inflated text widgets for crash-safe subclasses (drag-shadow bug). -->
+        <item name="viewInflaterClass">com.v2ray.ang.util.SafeAppCompatViewInflater</item>
+        <item name="android:windowBackground">@drawable/bg_glass_dialog</item>
+        <item name="android:windowMinWidthMajor">65%</item>
+        <item name="android:windowMinWidthMinor">95%</item>
+        <item name="android:textColorPrimary">@color/colorText</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppThemeDayNight.NoActionBar" parent="AppThemeDayNight">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Swaps inflated text widgets for crash-safe subclasses (drag-shadow bug). -->
+        <item name="viewInflaterClass">com.v2ray.ang.util.SafeAppCompatViewInflater</item>
+        <!-- Customize your theme here. -->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.Translucent">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="FabSquircle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">22dp</item>
+    </style>
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+            <item name="colorControlNormal">@color/colorBlack</item>
+            <item name="android:textColorPrimary">@color/colorText</item>
+    </style>
+    <style name="PopupMenuTheme" parent="ThemeOverlay.AppCompat.DayNight">
+        <item name="android:colorBackground">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">@color/colorText</item>
+        <item name="android:textColorSecondary">@color/colorText</item>
+    </style>
+
+
+</resources>

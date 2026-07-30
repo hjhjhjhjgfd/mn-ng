@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ic_report_flag_outline - outlined flag icon for the TV layout.
+  Uses the same accent color as the phone variant so the icon
+  family stays consistent across form factors.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="?attr/colorMainText">
+    <path
+        android:fillColor="@android:color/white"
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="0.5"
+        android:pathData="M14.4,6L14,4H5v17h2v-7h5.6l0.4,2h7V6z"/>
+</vector>

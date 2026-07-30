@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Floating ads/sponsor strip background. Keeps the original yellow
+  accent tone but softens it into a translucent pill with a 1dp stroke
+  so it visually belongs to the new glass family.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/glass_ads_solid" />
+    <corners android:radius="@dimen/glass_corner_radius" />
+    <stroke
+        android:width="1dp"
+        android:color="@color/glass_stroke" />
+</shape>

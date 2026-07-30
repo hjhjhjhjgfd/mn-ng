@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  item_ad_mahsa_alert - empty state placeholder for the optional
+  Mahsa alert banner referenced by the TV layout. Made invisible
+  by default so it does not affect the visual layout.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:visibility="gone" />

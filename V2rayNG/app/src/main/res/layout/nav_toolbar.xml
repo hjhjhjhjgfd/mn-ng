@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  nav_toolbar.xml - floating glass toolbar used by secondary activities.
+  Wraps the existing Toolbar in a rounded-bottom glass background so it
+  matches the main activity. Preserves the original toolbar id and
+  layout_scrollFlags so behavior is unchanged.
+-->
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/actionBarSize"
+    android:layout_marginStart="@dimen/glass_float_margin_x"
+    android:layout_marginEnd="@dimen/glass_float_margin_x"
+    android:layout_marginTop="@dimen/glass_float_margin_top"
+    android:background="@android:color/transparent"
+    android:elevation="@dimen/glass_elevation_toolbar"
+    app:elevation="@dimen/glass_elevation_toolbar">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_glass_secondary_toolbar"
+        app:layout_scrollFlags="scroll|enterAlways" />
+
+</com.google.android.material.appbar.AppBarLayout>

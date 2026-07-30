@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  tv_focus_bg - solid focused background for TV focusable elements.
+  Used by the TV tunnel-config screen. Same shape language as
+  tv_focus_bg_transparent but with a solid (non-transparent) fill
+  so it works on top of busy list items.
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/glass_button_solid_focused" />
+            <corners android:radius="@dimen/glass_corner_radius_button" />
+            <stroke android:width="2dp" android:color="@color/colorAccent" />
+        </shape>
+    </item>
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/glass_button_solid_pressed" />
+            <corners android:radius="@dimen/glass_corner_radius_button" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/glass_button_solid" />
+            <corners android:radius="@dimen/glass_corner_radius_button" />
+        </shape>
+    </item>
+</selector>

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  activity_main.xml - MahsaNG / Material 2027 Expressive redesign.
+
+  Structure preserved (every existing view ID is kept so MainActivity.kt
+  binding still resolves):
+    - DrawerLayout (drawer_layout)
+      - root LinearLayout
+        - AppBarLayout (toolbar container, now floating glass)
+        - ads/sponsor row (report_flag_button, textView_ADS_main1, textView_ADS_fix)
+        - RelativeLayout
+          - CoordinatorLayout (main_content)
+            - LinearLayout
+              - RecyclerView (recycler_view)
+              - bottom toolbox LinearLayout (get_rot_config_button7, test_rot_config_button7,
+                sort_rot_config_button7, filter_sub_button7)  -> floating glass footer
+              - ProgressBar (progressbar_main)
+              - layout_test (tv_test_state)  -> floating glass capsule
+            - FloatingActionButton (fab)
+      - NavigationView (nav_view)
+
+  What changed:
+    - Top AppBar gets a rounded bottom-edge + floating margins
+    - Ads/sponsor row becomes a floating glass capsule
+    - Bottom toolbox becomes a floating glass footer with rounded top
+    - layout_test becomes a rounded glass capsule
+    - All corner radii use the new glass_corner_radius_* dimens
+-->
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- ============ Floating glass top toolbar ============ -->
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/glass_float_margin_x"
+            android:layout_marginEnd="@dimen/glass_float_margin_x"
+            android:layout_marginTop="@dimen/glass_float_margin_top"
+            android:background="@android:color/transparent"
+            android:elevation="@dimen/glass_elevation_toolbar"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:elevation="@dimen/glass_elevation_toolbar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/bg_glass_toolbar" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!-- ============ Floating ads / sponsor capsule ============ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/glass_float_margin_x"
+            android:layout_marginEnd="@dimen/glass_float_margin_x"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_glass_ads"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/glass_padding_h"
+            android:paddingEnd="@dimen/glass_padding_h"
+            android:paddingTop="@dimen/glass_padding_v"
+            android:paddingBottom="@dimen/glass_padding_v"
+            android:elevation="@dimen/glass_elevation_card">
+
+            <ImageView
+                android:id="@+id/report_flag_button"
+                android:layout_width="@dimen/png_height"
+                android:layout_height="@dimen/png_height"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/report_flag1"
+                app:tint="?attr/colorMainText" />
+
+
+            <TextView
+                android:id="@+id/textView_ADS_main1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:autoLink="web"
+                android:linksClickable="true"
+                android:layout_weight="10"
+                android:textColor="@color/color_ads_text"
+                android:text="https://t.me/mahsa_net" />
+
+            <TextView
+                android:id="@+id/textView_ADS_fix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:textColor="@color/color_sponsor_fix"
+                android:text="اهدا کننده:" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/main_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:clipToPadding="false"
+                        android:paddingTop="6dp"
+                        android:paddingBottom="6dp"
+                        android:nextFocusRight="@+id/fab" />
+
+
+                    <!-- ============ Floating glass bottom toolbox ============ -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/glass_float_margin_x"
+                        android:layout_marginEnd="@dimen/glass_float_margin_x"
+                        android:background="@drawable/bg_glass_footer"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/glass_padding_v"
+                        android:paddingBottom="@dimen/glass_padding_v"
+                        android:paddingStart="@dimen/glass_padding_h"
+                        android:paddingEnd="@dimen/glass_padding_h"
+                        android:elevation="@dimen/glass_elevation_footer">
+
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.15" />
+
+
+                        <Button
+                            android:id="@+id/get_rot_config_button7"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="1dp"
+                            android:layout_weight="2"
+                            android:textColor="@color/color_btn_get_txt"
+                            android:backgroundTint="@color/color_btn_get_config"
+                            android:background="@drawable/bg_glass_button_selector"
+                            android:focusable="true"
+                            android:nextFocusLeft="@+id/recycler_view"
+                            android:text="@string/btn_get_rotating_config" />
+
+
+                        <Button
+                            android:id="@+id/test_rot_config_button7"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="1dp"
+                            android:layout_weight="1"
+                            android:textColor="@color/color_btn_test_txt"
+                            android:backgroundTint="@color/color_btn_test_config"
+                            android:background="@drawable/bg_glass_button_selector"
+                            android:focusable="true"
+                            android:nextFocusLeft="@+id/get_rot_config_button7"
+                            android:text="@string/btn_test_rotating_config" />
+
+                        <Button
+                            android:id="@+id/sort_rot_config_button7"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="1dp"
+                            android:layout_weight="1"
+                            android:textColor="@color/color_btn_sort_txt"
+                            android:backgroundTint="@color/color_btn_sort_config"
+                            android:background="@drawable/bg_glass_button_selector"
+                            android:focusable="true"
+                            android:nextFocusLeft="@+id/test_rot_config_button7"
+                            android:text="@string/btn_sort_rotating_config" />
+
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.15" />
+
+
+                        <Button
+                            android:id="@+id/filter_sub_button7"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="5dp"
+                            android:layout_weight="1.7"
+                            android:textColor="@color/color_btn_subfilter_txt"
+                            android:textAllCaps="false"
+                            android:textStyle="bold"
+                            android:backgroundTint="@color/color_btn_subfilter_spinner"
+                            android:background="@drawable/bg_glass_button_selector"
+                            android:focusable="true"
+                            android:nextFocusDown="@+id/fab"
+                            android:nextFocusLeft="@+id/sort_rot_config_button7"
+                            android:maxLines="2"
+                            android:text="" />
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.15" />
+
+
+                    </LinearLayout>
+                    <ProgressBar
+                        android:id="@+id/progressbar_main"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/color_footer_toolbox"
+                        android:background="@color/color_footer_toolbox"
+                        android:indeterminate="false"
+                        android:indeterminateTint="#1a09d6"
+                        android:max="100"
+                        android:progress="0" />
+
+                    <!-- ============ Floating glass connection-test capsule ============ -->
+                    <LinearLayout
+                        android:id="@+id/layout_test"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/connection_test_height"
+                        android:layout_marginStart="@dimen/glass_float_margin_x"
+                        android:layout_marginEnd="@dimen/glass_float_margin_x"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="6dp"
+                        android:background="@drawable/bg_glass_capsule"
+                        android:elevation="@dimen/glass_elevation_card"
+                        android:gravity="center|start"
+                        android:nextFocusRight="@+id/fab"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:nextFocusLeft="@+id/recycler_view">
+
+                        <TextView
+                            android:id="@+id/tv_test_state"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="64dp"
+                            android:maxLines="2"
+                            android:minLines="1"
+                            android:paddingStart="16dp"
+                            android:text="@string/connection_test_pending"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="@color/colorWhite" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:clickable="true"
+                    android:contentDescription="M connect button"
+                    android:focusable="true"
+                    android:nextFocusLeft="@+id/layout_test"
+                    android:src="@drawable/ic_stat_name_m2"
+                    app:shapeAppearanceOverlay="@style/FabSquircle"
+                    app:layout_anchorGravity="bottom|right|end" />
+
+                <!--
+                  FABProgressCircle wraps the FAB to render the spinning
+                  progress ring shown while the VPN is connecting.
+                  Referenced from MainActivity.kt as binding.fabProgressCircle.
+                -->
+                <cc.fabprogresscircle.FABProgressCircle
+                    android:id="@+id/fab_progress_circle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:visibility="invisible"
+                    app:layout_anchor="@id/fab"
+                    app:layout_anchorGravity="center" />
+
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/bg_glass_drawer"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/menu_drawer">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+        </LinearLayout>
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>

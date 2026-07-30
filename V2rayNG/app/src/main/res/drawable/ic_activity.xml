@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ic_activity - pulse/activity glyph used by the TV bottom toolbox.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="?attr/colorMainText">
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M22,12h-4l-3,9L9,3l-3,9H2"/>
+</vector>

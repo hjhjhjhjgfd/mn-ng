@@ -1,0 +1,100 @@
+name: Build MahsaNG APK
+
+# ============================================================
+# MahsaNG / V2rayNG - GitHub Actions build pipeline.
+# Produces signed-debug APKs for every flavor x ABI,
+# plus a universal APK, and uploads them as a release artifact.
+# ============================================================
+
+on:
+  push:
+    branches: [ master, main ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ master, main ]
+  workflow_dispatch:
+
+# Cancel superseded runs on the same ref to save CI minutes.
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build APK (debug-signed)
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          submodules: false
+          fetch-depth: 1
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: gradle
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          packages: |
+            tools
+            platform-tools
+            build-tools;33.0.2
+            platforms;android-33
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./V2rayNG/gradlew
+
+      - name: Cache Gradle dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            V2rayNG/.gradle
+          key: gradle-${{ runner.os }}-${{ hashFiles('V2rayNG/**/*.gradle', 'V2rayNG/gradle.properties', 'V2rayNG/gradle/wrapper/gradle-wrapper.properties') }}
+          restore-keys: |
+            gradle-${{ runner.os }}-
+
+      - name: Build debug APK (all flavors + universal APK)
+        working-directory: V2rayNG
+        run: ./gradlew assembleDebug --stacktrace --no-daemon
+
+      - name: List built APKs
+        working-directory: V2rayNG
+        run: |
+          echo "::group::Built APKs"
+          find . -type f -name '*.apk' -print -exec ls -lh {} \;
+          echo "::endgroup::"
+
+      - name: Upload APK artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: MahsaNG-apks
+          path: |
+            V2rayNG/app/build/outputs/apk/**/*.apk
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 0
+
+      # --------------------------------------------------------
+      # Optional GitHub Release step - only fires on tag pushes.
+      # --------------------------------------------------------
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: MahsaNG ${{ github.ref_name }}
+          generate_release_notes: true
+          fail_on_unmatched_files: false
+          files: |
+            V2rayNG/app/build/outputs/apk/**/*.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

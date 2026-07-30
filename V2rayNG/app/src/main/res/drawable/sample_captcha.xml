@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  sample_captcha - placeholder image used by gfw_captcha_dialog.
+  Renders a simple 4-character captcha box.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="48dp"
+    android:viewportWidth="120"
+    android:viewportHeight="48">
+    <path
+        android:fillColor="#F1F1FF"
+        android:pathData="M0,4h120v40h-120z"/>
+    <path
+        android:fillColor="#1565C0"
+        android:strokeColor="#1565C0"
+        android:strokeWidth="2"
+        android:pathData="M18,12 l4,18 M30,30 l-2,-18 m6,18 l2,-18 M44,12 l-1,18 m7,-18 l1,18 M56,30 l-2,-18 m8,0 l-2,18 M70,12 l4,18 M82,30 l-2,-18 m6,18 l2,-18"/>
+</vector>

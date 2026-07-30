@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Fully rounded floating capsule used for the test-state bar, the
+  connection status row and any other compact horizontal strip that
+  should "lift" off the page. Material 2027 expressive shape: 28dp
+  corners, hairline stroke, translucent fill.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/glass_capsule_solid" />
+    <corners android:radius="@dimen/glass_corner_radius_large" />
+    <stroke
+        android:width="1dp"
+        android:color="@color/glass_stroke" />
+</shape>

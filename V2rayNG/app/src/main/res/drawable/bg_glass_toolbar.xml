@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Glassmorphism background for the floating top toolbar.
+  - 1dp hairline stroke for crisp edge separation
+  - Rounded 24dp corners (Material 2027 expressive shape)
+  - Semi-translucent solid color so the underlying content shows through
+  Works on API 21+ (no gradient that needs API 24+). For richer blur on
+  API 31+ the BaseActivity applies RenderEffect to the toolbar root.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/glass_toolbar_solid" />
+    <corners
+        android:topLeftRadius="0dp"
+        android:topRightRadius="0dp"
+        android:bottomLeftRadius="@dimen/glass_corner_radius"
+        android:bottomRightRadius="@dimen/glass_corner_radius" />
+    <stroke
+        android:width="1dp"
+        android:color="@color/glass_stroke" />
+</shape>

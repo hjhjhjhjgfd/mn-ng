@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPing">#009966</color>
+    <color name="colorPingRed">#FF0099</color>
+    <color name="colorSubscription">#247BA0</color>
+    <color name="colorSelected">#009966</color>
+    <color name="colorUnselected">#999999</color>
+    <color name="colorWhite">#CFD8DC</color>
+    <color name="white">#FFFFFF</color>
+    <color name="colorBlack">#212121</color>
+    <color name="colorConfigType">#f97910</color>
+
+    <!-- Light-blue companion of the existing color_btn_light_purple family -->
+    <color name="color_btn_light_blue2">#E1F5FE</color>
+
+
+    <!--    <color name="colorPrimary">#008577</color>-->
+    <!--    <color name="colorPrimaryDark">#00574B</color>-->
+    <color name="colorPrimary">#2B2B2B</color>
+    <color name="colorPrimaryDark">#161616</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorBg">#FFFFFF</color>
+    <color name="colorText">#000000</color>
+
+    <color name="color_fab_active">#f97910</color>
+    <color name="color_fab_inactive">#9C9C9C</color>
+    <color name="color_secondary">#727272</color>
+
+    <color name="color_btn_get_config">#F1F1FF</color>
+    <color name="color_btn_test_config">#FFF1F1</color>
+    <color name="color_btn_sort_config">#F1FFF1</color>
+    <color name="color_btn_green_config">#E1FFE1</color>
+    <color name="color_btn_subfilter_spinner">#E1E1F1</color>
+    <color name="color_btn_subfilter_manage">#DFE9F6</color>
+
+    <color name="color_btn_light_yellow">#f7f7d2</color>
+    <color name="color_btn_light_red">#fab4b4</color>
+    <color name="color_btn_light_purple">#E9D0FF</color>
+    <color name="color_btn_light_purple2">#F2E1FF</color>
+
+
+    <color name="color_btn_get_config_light1">#EAEAFF</color>
+    <color name="color_btn_get_config_light2">#EEEEFF</color>
+    <color name="color_btn_get_config_light3">#F1F1FF</color>
+    <color name="color_btn_get_config_light4">#FFF1F1</color>
+    <color name="color_btn_get_config_light5">#FAFAFF</color>
+    <color name="color_btn_get_config_light6">#FFFAFA</color>
+
+    <color name="color_bg_light7">#FBFFFB</color>
+    <color name="color_bg_light8">#FFFDF5</color>
+    <color name="color_bg_light9">#F3F3FF</color>
+    <color name="color_bg_light10">#FFFEFA</color>
+
+    <color name="color_btn_get_txt">#1565C0</color>
+    <color name="color_btn_test_txt">#C11E1E</color>
+    <color name="color_btn_sort_txt">#2F6D06</color>
+    <color name="color_btn_subfilter_txt">#6C22A6</color>
+    <color name="color_btn_clear_txt">#4C0286</color>
+    <color name="color_btn_warpkey_txt">#aC2266</color>
+
+
+    <color name="popup_recycler_background">#15FFCF00</color>
+
+    <color name="color_ads_background">#FFFFB3</color>
+    <color name="color_ads_text">#FF0000</color>
+    <color name="color_sponsor_fix">#363636</color>
+    <color name="color_footer_toolbox">#575757</color>
+
+
+    <!-- ============================================================= -->
+    <!-- ===== Glassmorphism / Material 2027 Expressive palette ===== -->
+    <!-- ============================================================= -->
+    <!-- Light theme tokens. All values are ARGB with alpha so the
+         underlying content shows through and creates the "frosted
+         glass" look. Pair with the matching night override in
+         values-night/colors.xml. -->
+
+    <!-- Hairline stroke used on every glass surface -->
+    <color name="glass_stroke">#33FFFFFF</color>
+
+    <!-- Top floating toolbar (MainActivity) -->
+    <color name="glass_toolbar_solid">#CC2B2B2B</color>
+    <color name="glass_secondary_toolbar_solid">#D9252525</color>
+
+    <!-- Bottom floating toolbox -->
+    <color name="glass_footer_solid">#CC2B2B2B</color>
+
+    <!-- Connection test bar / capsule -->
+    <color name="glass_capsule_solid">#B3303030</color>
+
+    <!-- Ads / sponsor capsule - keeps the warm yellow tone but translucent -->
+    <color name="glass_ads_solid">#B3FFFFB3</color>
+
+    <!-- RecyclerView row card -->
+    <color name="glass_card_solid">#E6FFFFFF</color>
+
+    <!-- Buttons inside the bottom toolbox -->
+    <color name="glass_button_solid">#99FFFFFF</color>
+    <color name="glass_button_solid_pressed">#66FFFFFF</color>
+    <color name="glass_button_solid_focused">#B3FFFFFF</color>
+
+    <!-- Navigation drawer -->
+    <color name="glass_drawer_solid">#F2FFFFFF</color>
+
+    <!-- Dialogs -->
+    <color name="glass_dialog_solid">#F2FFFFFF</color>
+
+    <!-- Window scrim used behind dialogs and the nav drawer -->
+    <color name="glass_scrim">#66000000</color>
+
+    <!-- Surface tint applied behind the floating bars to fake blur on API < 31 -->
+    <color name="glass_surface_tint">#0AFFFFFF</color>
+
+    <!-- ===== TV layout tokens (referenced by layout-television/) ===== -->
+    <color name="donor_label">#FFD54F</color>
+    <color name="donor_divider">#66FFD54F</color>
+    <color name="donor_link">#FF8A65</color>
+    <color name="empty_title_text">#212121</color>
+    <color name="empty_desc_text">#727272</color>
+    <!-- FAB orange used by server-card config-type label -->
+    <color name="fab_orange_dark">#E65100</color>
+
+</resources>

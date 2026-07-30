@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#12976F</color>
+    <color name="colorBg">#252525</color>
+    <color name="colorText">#CCCCCC</color>
+
+    <!-- ===== Night overrides for the glass palette ===== -->
+    <!-- The shapes are the same as the light theme; only the solid
+         fills and stroke change so the floating bars read darker
+         but still translucent. -->
+    <color name="glass_stroke">#44FFFFFF</color>
+
+    <color name="glass_toolbar_solid">#D9161616</color>
+    <color name="glass_secondary_toolbar_solid">#E6161616</color>
+
+    <color name="glass_footer_solid">#D9161616</color>
+
+    <color name="glass_capsule_solid">#BF1F1F1F</color>
+
+    <color name="glass_ads_solid">#99B39200</color>
+
+    <color name="glass_card_solid">#E61F1F1F</color>
+
+    <color name="glass_button_solid">#55303030</color>
+    <color name="glass_button_solid_pressed">#33303030</color>
+    <color name="glass_button_solid_focused">#66404040</color>
+
+    <color name="glass_drawer_solid">#F21F1F1F</color>
+
+    <color name="glass_dialog_solid">#F21F1F1F</color>
+
+    <color name="glass_scrim">#80000000</color>
+
+    <color name="glass_surface_tint">#10FFFFFF</color>
+
+    <!-- TV layout night overrides -->
+    <color name="donor_label">#FFD54F</color>
+    <color name="donor_divider">#66FFD54F</color>
+    <color name="donor_link">#FF8A65</color>
+    <color name="empty_title_text">#EEEEEE</color>
+    <color name="empty_desc_text">#AAAAAA</color>
+    <color name="fab_orange_dark">#FFB74D</color>
+</resources>

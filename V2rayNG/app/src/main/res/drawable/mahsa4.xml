@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  mahsa4 - vector placeholder used by activity_gfw_update.
+  Originally missing from the repo.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="80dp"
+    android:height="80dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#12976F"
+        android:pathData="M12,2L4,5v6c0,5.55 3.84,10.74 8,12 4.16,-1.26 8,-6.45 8,-12V5l-8,-3z"/>
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M10.5,16.5l-3,-3 1.41,-1.41L10.5,13.67l4.59,-4.59L16.5,10.5z"/>
+</vector>
