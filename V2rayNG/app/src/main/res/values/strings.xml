@@ -513,5 +513,7 @@
     <string name="status_ready_to_scan">Ready to scan</string>
     <string name="title_">Title</string>
     <string name="top_5_best">Top 5 Best</string>
+    <string name="server_address">Server Address</string>
+    <string name="server_port">Port</string>
 
 </resources>

@@ -229,7 +229,63 @@
     </string-array>
 
     <string-array name="reply_values">
-        <item>reply</item>
-        <item>reply_all</item>
-    </string-array>
-</resources>
+            <item>reply</item>
+            <item>reply_all</item>
+       </string-array>
+
+        <!-- Psiphon arrays -->
+        <string-array name="psiphon_country_list" translatable="false">
+            <item>auto</item>
+            <item>US</item>
+            <item>GB</item>
+            <item>DE</item>
+            <item>FR</item>
+            <item>CA</item>
+            <item>JP</item>
+            <item>SG</item>
+            <item>NL</item>
+     </string-array>
+
+        <string-array name="psiphon_protocol_list" translatable="false">
+            <item>HTTP</item>
+            <item>HTTPS</item>
+            <item>QUIC</item>
+            <item>WebSocket</item>
+     </string-array>
+
+        <string-array name="psiphon_aggressive_list" translatable="false">
+            <item>off</item>
+            <item>low</item>
+            <item>medium</item>
+            <item>high</item>
+     </string-array>
+
+        <string-array name="psiphon_cdn_type_list" translatable="false">
+            <item>none</item>
+            <item>cloudflare</item>
+            <item>fastly</item>
+            <item>akamai</item>
+     </string-array>
+
+        <!-- DNSTT arrays -->
+        <string-array name="dnstt_protocol" translatable="false">
+            <item>TLS</item>
+            <item>HTTPS</item>
+     </string-array>
+
+        <string-array name="dnstt_permit" translatable="false">
+            <item>off</item>
+            <item>low</item>
+            <item>medium</item>
+            <item>high</item>
+     </string-array>
+
+        <!-- MasterDNS encryption method -->
+        <string-array name="masterdns_encryption_method" translatable="false">
+            <item>none</item>
+            <item>chacha20-ietf-poly1305</item>
+            <item>aes-256-gcm</item>
+            <item>aes-128-gcm</item>
+     </string-array>
+
+    </resources>
