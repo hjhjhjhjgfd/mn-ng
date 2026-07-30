@@ -87,4 +87,13 @@ object AppConfig {
     const val MSG_MEASURE_CONFIG = 7
     const val MSG_MEASURE_CONFIG_SUCCESS = 71
     const val MSG_MEASURE_CONFIG_CANCEL = 72
+
+    // Wireguard defaults
+    const val WIREGUARD_LOCAL_ADDRESS_V4 = "10.0.0.2/24"
+    const val WIREGUARD_LOCAL_MTU = "1420"
+    const val WIREGUARD_keep_alive = "0"
+    const val WIREGUARD_wnoise = "off"
+    const val WIREGUARD_wnoisecount = "0"
+    const val WIREGUARD_wnoisedelay = "0"
+    const val WIREGUARD_wpayloadsize = "0"
 }

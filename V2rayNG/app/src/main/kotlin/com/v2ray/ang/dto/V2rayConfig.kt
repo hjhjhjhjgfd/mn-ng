@@ -106,6 +106,11 @@ data class V2rayConfig(
             var reserved: List<Int>? = null,
             var mtu: Int? = null,
             var obfsPassword: String? = null,
+            var keepAlive: Int? = null,
+            var wnoise: String? = null,
+            var wnoisecount: String? = null,
+            var wnoisedelay: String? = null,
+            var wpayloadsize: String? = null,
         ) {
 
             data class VnextBean(
