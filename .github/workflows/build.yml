@@ -42,7 +42,23 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
         with:
-          packages: cmdline-tools;latest build-tools;34.0.0 platforms;android-34
+          packages: "platform-tools build-tools;33.0.2 platforms;android-33"
+
+      # ----------------------------------------------------------
+      # The v2ray/xray core is a Go library compiled with gomobile
+      # into libv2ray.aar. It is NOT vendored in this repo (the
+      # AndroidLibV2rayLite/ folder here is just docs) but app code
+      # hard-depends on it (imports libv2ray.*, go.Seq). Grab the
+      # prebuilt aar from AndroidLibXrayLite's latest release,
+      # same as upstream v2rayNG's own CI does.
+      # ----------------------------------------------------------
+      - name: Download libv2ray.aar (v2ray/xray core)
+        uses: robinraju/release-downloader@v1.11
+        with:
+          repository: '2dust/AndroidLibXrayLite'
+          latest: true
+          fileName: 'libv2ray.aar'
+          out-file-path: 'V2rayNG/app/libs'
 
       - name: Grant execute permission for gradlew
         run: chmod +x ./V2rayNG/gradlew
