@@ -163,9 +163,10 @@ data class V2rayConfig(
             data class Response(var type: String)
 
             data class WireGuardBean(
-                var publicKey: String = "",
-                var endpoint: String = ""
-            )
+                            var publicKey: String = "",
+                            var endpoint: String = "",
+                            var keepAlive: Int? = null
+                        )
         }
 
         data class StreamSettingsBean(

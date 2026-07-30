@@ -96,4 +96,16 @@ object AppConfig {
     const val WIREGUARD_wnoisecount = "0"
     const val WIREGUARD_wnoisedelay = "0"
     const val WIREGUARD_wpayloadsize = "0"
+
+    // Network protocols
+    const val PROTOCOL_HTTPS = "https"
+    const val PROTOCOL_HTTP = "http"
+
+    // Preference keys
+    const val my_preference_storage = "my_preference_storage"
+    const val PREF_UI_MODE_NIGHT = "pref_ui_mode_night"
+
+    // Delay test URLs
+    const val DelayTestUrl = "https://www.google.com/generate_204"
+    const val DelayTestUrl2 = "https://cp.cloudflare.com/generate_204"
 }
